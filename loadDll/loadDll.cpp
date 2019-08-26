@@ -26,6 +26,9 @@ loadDll::loadDll(QWidget *parent)
         }
 
         QStringList pathList = enumOfficeFile->enumOfficeFilePath("ppt");
-
+        //for (const auto& path : pathList)
+        //{
+        //    qDebug() << path;
+        //}
     }
 }

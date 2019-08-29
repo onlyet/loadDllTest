@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QtWidgets/QWidget>
+#include "ui_my.h"
 
 class loadDll : public QWidget
 {
@@ -10,4 +11,5 @@ public:
     loadDll(QWidget *parent = Q_NULLPTR);
 
 private:
+    Ui::TESTUI ui;
 };

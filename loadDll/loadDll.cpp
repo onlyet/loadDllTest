@@ -3,9 +3,13 @@
 #include <QPluginLoader>
 #include <QDebug>
 
+
 loadDll::loadDll(QWidget *parent)
     : QWidget(parent)
 {
+    ui.setupUi(this);
+    setFixedSize(1366, 700);
+
     QString dllPath = "D:/dev/loadDll/device/enumOffileFile.dll";
 
     QPluginLoader loader(dllPath);
@@ -26,6 +30,9 @@ loadDll::loadDll(QWidget *parent)
         }
 
         QStringList pathList = enumOfficeFile->enumOfficeFilePath("ppt");
-
+        if (!pathList.empty())
+            ui.label->setText(pathList.at(0));
+        else
+            ui.label->setText("no ppt");
     }
 }
